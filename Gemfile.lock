@@ -1,3 +1,8 @@
+PATH
+  remote: .
+  specs:
+    blogger-client (0.0.1)
+
 GEM
   remote: https://rubygems.org/
   specs:
@@ -149,6 +154,7 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
+  blogger-client!
   coffee-rails (~> 4.0.0)
   jbuilder (~> 2.0)
   jquery-rails

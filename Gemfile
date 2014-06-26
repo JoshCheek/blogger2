@@ -1,5 +1,6 @@
 source 'https://rubygems.org'
 
+gem 'blogger-client', path: '.', require: 'blogger'
 
 gem 'nokogiri', '~> 1.6.2'
 gem 'sorcery'

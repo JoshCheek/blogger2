@@ -1,0 +1,17 @@
+#!/usr/bin/env ruby
+
+$LOAD_PATH.unshift File.expand_path('../lib/blogger-client/lib', __FILE__)
+
+require 'blogger'
+
+web_client = Blogger::WebClients::NetHttp.new('irrelevant-username', 'irrelevant-password')
+client = Blogger::Client.new web_client: web_client, base_url: 'http://localhost:3000'
+
+articles = client.all
+
+articles.each do |article|
+  created_at = article.created_at.strftime("%A, %b %d")
+  puts "(#{created_at}) #{article.title}"
+  puts "  #{article.body}"
+  puts
+end

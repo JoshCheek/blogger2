@@ -1,0 +1,5 @@
+require 'blogger/version'
+require 'blogger/errors'
+require 'blogger/article'
+require 'blogger/client'
+require 'blogger/web_clients/net_http'
