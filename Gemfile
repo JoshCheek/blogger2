@@ -1,6 +1,7 @@
 source 'https://rubygems.org'
 
 
+gem 'nokogiri', '~> 1.6.2'
 gem 'sorcery'
 gem 'pry'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
