@@ -1,6 +1,7 @@
 source 'https://rubygems.org'
 
 
+gem 'sorcery'
 gem 'pry'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.1.0'
