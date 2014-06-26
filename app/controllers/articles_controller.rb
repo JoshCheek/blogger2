@@ -1,10 +1,23 @@
 class ArticlesController < ApplicationController
-  before_filter :require_login, except: [:index, :show]
-
   include ArticlesHelper
+  before_filter :require_login, except: [:index, :show]
 
   def index
     @articles = Article.all
+    respond_to do |format|
+      format.html {} # falls through to app/views/articles/index.html.erb
+
+      format.json do
+        # returns ruby primitives that match up with JSON objects
+        # (arrays, strings, hashes, numbers)
+        render json: @articles.as_json
+      end
+
+      format.xml do
+        # the build_feed method is defined in the ArticlesHelper
+        render xml: build_feed(@articles, env['HTTP_HOST'])
+      end
+    end
   end
 
   def show
